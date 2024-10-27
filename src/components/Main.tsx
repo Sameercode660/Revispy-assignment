@@ -1,5 +1,5 @@
 'use client'
-import { MouseEventHandler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 type Interest = {
@@ -83,9 +83,14 @@ export default function Main() {
         categories: InterestedCategory
       }
       console.log(data)
+      
+      setButtonState(true)
       setLoading(true)
+
       const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/store-category`, data)
+      
       setLoading(false)
+      setButtonState(true)
 
       if(response.data.status) {
         alert("Your interest is successfully saved")
