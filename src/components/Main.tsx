@@ -116,8 +116,8 @@ export default function Main() {
               <input
                 type="checkbox"
                 checked={interest.isChecked}
-                onChange={() => handleCheckboxChange(Number(interest.id))}
-                onClick={(e) => {
+                onChange={(e) =>{ 
+                  handleCheckboxChange(Number(interest.id))
                   handleInterestedCategory(e, interest.id)
                 }}
                 className="form-checkbox h-5 w-5 text-black border-gray-300 rounded"
