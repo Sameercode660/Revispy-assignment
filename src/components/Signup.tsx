@@ -2,10 +2,9 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Otp from './Otp';
 import axios from 'axios';
-import { useRecoilState } from 'recoil';
 import { useRouter } from 'next/navigation';
 
 function Signup() {

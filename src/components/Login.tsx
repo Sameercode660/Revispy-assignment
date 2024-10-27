@@ -84,7 +84,7 @@ function Login() {
                 <div className='w-[70%] border-b border-gray-300'></div>
 
                 <div>
-                    <span className='text-gray-600 text-[16px]'>Don't have an Account? <Link className='font-semibold' href="./">SIGN UP</Link></span>
+                    <span className='text-gray-600 text-[16px]'>Don&apos;t have an Account? <Link className='font-semibold' href="./">SIGN UP</Link></span>
                 </div>
             </div>
         </div>

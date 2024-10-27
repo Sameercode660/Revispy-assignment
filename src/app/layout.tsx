@@ -1,8 +1,6 @@
 
-import localFont from "next/font/local";
 import "./globals.css";
 import Menu from "@/components/Menu";
-import { RecoilRoot } from "recoil";
 
  
 

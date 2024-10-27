@@ -1,7 +1,6 @@
 import {NextResponse, NextRequest} from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import { ApiErrorResponse } from '@/utils/ApiErrorResponse'
-import { validateEmail } from '@/utils/zod';
 import { comparePassword } from '@/utils/Bcrypt';
 import { ApiSuccessResponse } from '@/utils/ApiSuccessResponse';
 

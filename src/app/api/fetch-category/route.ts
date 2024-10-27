@@ -1,4 +1,4 @@
-import {NextResponse, NextRequest} from 'next/server'
+import {NextResponse} from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import { ApiErrorResponse } from '@/utils/ApiErrorResponse'
 import { ApiSuccessResponse } from '@/utils/ApiSuccessResponse';

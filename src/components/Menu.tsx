@@ -2,10 +2,10 @@ import React from 'react'
 
 function Menu() {
     return (
-        <div className='w-full h-[10rem] border-2 border-red-500 flex flex-col gap-4'>
+        <div className='w-full h-[10rem] flex flex-col gap-4'>
 
             {/* top upper side menu items  */}
-            <div className='flex justify-end'>
+            <div className='flex justify-end p-4 space-x-6'>
                 <div>
                     <span>Help</span>
                 </div>
@@ -18,12 +18,12 @@ function Menu() {
             </div>
 
             {/* mid Menu item list  */}
-            <div className='flex justify-around'>
+            <div className='flex justify-around items-center'>
                 <div>
-                    <span>Ecommerce</span>
+                    <span className='text-[2rem] font-semibold'>Ecommerce</span>
                 </div>
 
-                <div className='flex'>
+                <div className='flex font-semibold space-x-5 text-gray-500'>
                     <div >
                         <span>Categories</span>
                     </div>
@@ -47,9 +47,9 @@ function Menu() {
 
                 </div>
 
-                <div className='flex'>
+                <div className='flex font-semibold space-x-5 text-gray-500'>
 
-                    <div >
+                    <div>
                         <span>Search</span>
                     </div>
                     <div>
@@ -63,8 +63,8 @@ function Menu() {
 
             {/* botton Menu part  */}
 
-            <div className='flex justify-center'>
-                <span>Get 10% off on business sign up</span>
+            <div className='flex justify-center bg-gray-100'>
+                <span>&lt;  Get 10% off on business sign up  &gt;</span>
             </div>
         </div>
     )

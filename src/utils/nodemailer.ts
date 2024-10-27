@@ -6,8 +6,8 @@ const nodeMailer = async (email: string, name: string) => {
     port: 587,
     secure: false,
     auth: {
-      user: process.env.SMTP_EMAIL as String,
-      pass: process.env.SMTP_PASSWORD as String,
+      user: process.env.SMTP_EMAIL as string,
+      pass: process.env.SMTP_PASSWORD as string,
     },
   });
 
