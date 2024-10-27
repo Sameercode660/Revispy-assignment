@@ -68,7 +68,7 @@ function Signup() {
         }
     }
 
-    async function onSubmit(id: string, otp: number) {
+    async function onSubmit(id: string| null, otp: number) {
         try {
             const data = {
                 id,

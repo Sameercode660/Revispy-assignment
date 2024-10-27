@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 interface OtpProps {
     length?: number;
-    onSubmit: (id: string | null, otp: string) => void;
+    onSubmit: (id: string | null, otp: number) => Promise<void>;
     email?: string;
     loadingState?: boolean;
 }
@@ -12,7 +12,7 @@ const Otp: React.FC<OtpProps> = ({
     onSubmit,
     email = "mohdsameer789736@gmail.com",
     loadingState
-}: OtpProps) => {
+}) => {
     const [otp, setOtp] = useState<string[]>(new Array(length).fill(""));
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -32,7 +32,7 @@ const Otp: React.FC<OtpProps> = ({
 
         const combinedOtp = newOtp.join("");
         if (combinedOtp.length === length) {
-            onSubmit(localStorage.getItem("id"), combinedOtp);
+            onSubmit(localStorage.getItem("id"), Number(combinedOtp));
         }
 
         if (value && index < length - 1 && inputRefs.current[index + 1]) {
@@ -79,7 +79,9 @@ const Otp: React.FC<OtpProps> = ({
                         <input
                             key={index}
                             type="text"
-                            ref={(input) => (inputRefs.current[index] = input)}
+                            ref={(input) => {
+                                inputRefs.current[index] = input;
+                            }}
                             value={value}
                             onChange={(e) => handleChange(index, e)}
                             onClick={() => handleClick(index)}
