@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useAuth } from '@/context/AuthContext';
+
 interface OtpProps {
     length?: number;
     onSubmit: (id: string | null, otp: number) => Promise<void>;
