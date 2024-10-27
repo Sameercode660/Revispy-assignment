@@ -30,7 +30,7 @@ export default function Main() {
   const [loading, setLoading] = useState<boolean>(false)
   const [buttonState, setButtonState] = useState<boolean>(false)
 
-  const handleCheckboxChange = (id: Number) => {
+  const handleCheckboxChange = (id: number) => {
     setInterests((prevInterests) =>
       prevInterests.map((interest) =>
         Number(interest.id) === id ? { ...interest, isChecked: !interest.isChecked } : interest
@@ -61,7 +61,7 @@ export default function Main() {
   }
 
 
-  function handleInterestedCategory(e: any, id: string) {
+  function handleInterestedCategory(e: React.ChangeEvent<HTMLInputElement>, id: string) {
 
     if (id in InterestedCategory) {
       return
