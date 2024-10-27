@@ -1,10 +1,13 @@
 import React from 'react'
 import Main from '../../components/Main'
+import ProtectedRoute from '@/components/ProtectedRoute'
 
 function page() {
   return (
     <>
-      <Main></Main>
+      <ProtectedRoute>
+        <Main></Main>
+      </ProtectedRoute>
     </>
   )
 }

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Otp from './Otp';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 
 function Signup() {
 
@@ -20,7 +21,10 @@ function Signup() {
     const [passwordError, setPasswordError] = useState(false)
     const [loading, setLoading] = useState(false)
     const [loadingState, setLoadingState] = useState(false)
+
     const router = useRouter()
+    const { setIsLogin } = useAuth();
+
 
     async function handleSignup() {
         try {
@@ -68,7 +72,7 @@ function Signup() {
         }
     }
 
-    async function onSubmit(id: string| null, otp: number) {
+    async function onSubmit(id: string | null, otp: number) {
         try {
             const data = {
                 id,
@@ -79,6 +83,7 @@ function Signup() {
             setLoadingState(false)
             console.log(response)
             if (response.data.status) {
+                setIsLogin(true)
                 router.push('/main')
             }
         } catch (error) {

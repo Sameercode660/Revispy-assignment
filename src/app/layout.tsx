@@ -1,8 +1,9 @@
-
+'use client'
 import "./globals.css";
 import Menu from "@/components/Menu";
+import { AuthProvider } from "@/context/AuthContext";
 
- 
+
 
 export default function RootLayout({
   children,
@@ -14,7 +15,9 @@ export default function RootLayout({
       <body
       >
         <Menu></Menu>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

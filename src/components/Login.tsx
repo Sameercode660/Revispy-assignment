@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { useAuth } from '@/context/AuthContext';
 
 function Login() {
 
@@ -15,6 +16,7 @@ function Login() {
 
     const router = useRouter();
 
+    const {setIsLogin} = useAuth();
 
     async function handleLogin() {
         try {
@@ -43,6 +45,8 @@ function Login() {
             setLoading(false)
 
             if(response.data.status) {
+                localStorage.setItem("id", response.data.response.id)
+                setIsLogin(true)
                 router.push('/main')
             }
 
